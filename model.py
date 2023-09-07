@@ -21,6 +21,10 @@ def get_predicted_roll_numbers(model, image_data):
     current_script_path = os.path.abspath(__file__)
     current_dir_path = os.path.dirname(current_script_path)
     data_path = os.path.join(current_dir_path,"Data_2")
+
+    if not os.path.exists(data_path):
+        os.makedirs(data_path)
+
     incoming_data_path = os.path.join(data_path,"incoming_data")
 
     if not os.path.exists(incoming_data_path):
